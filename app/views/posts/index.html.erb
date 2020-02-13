@@ -2,8 +2,11 @@
 
 <!-- Page Content -->
 <div class="container">
-
+  <% if flash[:success] %>
+    <div class="alert alert-danger"><%= flash[:success] %></div>
+  <% end %>
   <div class="row mt-4">
+    
     <!-- Team Member 1 -->
     <%= @posts.each do |post| %>
     <div class="col-xl-3 col-md-6 mb-4">
@@ -15,7 +18,7 @@
           <h5 class="card-title mb-0"><%= post.name %></h5>
           <div class="card-text text-black-50"><%= post.body %></div>
           <div class="card-text text-black-50"><%= post.created_at.strftime('%Y年 %m月 %d日 %H時 %m分 ') %></div>
-          <%= link_to '削除', post, class: '', method: :delete %>
+          <%= link_to '削除', post, class: 'btn btn-gray btn-sm ', method: :delete %>
         </div>
       </div>
     </div>
@@ -26,3 +29,5 @@
 </div>
 
 <!-- /.container -->
+
+<%= paginate @posts %>

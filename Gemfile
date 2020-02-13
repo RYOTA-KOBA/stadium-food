@@ -18,7 +18,11 @@ gem 'mini_racer'
 
 gem 'bootstrap'
 
+
+gem "jquery-rails"
+
 gem 'kaminari'
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
