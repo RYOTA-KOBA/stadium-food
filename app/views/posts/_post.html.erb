@@ -1,0 +1,12 @@
+<div class="post-container no-gutters mx-sm-auto mt-4" style="max-width: 700px">
+    <div class="col img-col">
+      <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+    </div>
+    <div class="col card-body text-left">
+        <h5 class="card-title mb-0"><%= post.name %></h5>
+        <div class="card-text text-black-50"><%= simple_format(post.body) %></div>
+        <div class="card-text text-black-50"><%= post.created_at.strftime('%Y年 %m月 %d日 %H時 %m分 ') %></div>
+        <%= link_to '編集', edit_post_path(post), class: '', method: :delete %>
+        <%= link_to '削除', post, class: '' %>
+    </div>
+</div>

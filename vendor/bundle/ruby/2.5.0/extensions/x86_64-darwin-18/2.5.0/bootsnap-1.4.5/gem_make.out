@@ -1,0 +1,15 @@
+current directory: /Users/ryota/Desktop/Rails/blog/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/ext/bootsnap
+/Users/ryota/.rbenv/versions/2.5.0/bin/ruby -I /Users/ryota/.rbenv/versions/2.5.0/lib/ruby/site_ruby/2.5.0 -r ./siteconf20200212-27766-19u23lb.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ryota/Desktop/Rails/blog/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/ryota/Desktop/Rails/blog/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/ryota/Desktop/Rails/blog/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20200212-27766-7sdbf/bootsnap

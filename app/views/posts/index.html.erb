@@ -1,0 +1,28 @@
+<%= render 'header' %>
+
+<!-- Page Content -->
+<div class="container">
+
+  <div class="row mt-4">
+    <!-- Team Member 1 -->
+    <%= @posts.each do |post| %>
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-0 shadow">
+        <%= link_to post_path(post) do %>
+            <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <% end %>
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0"><%= post.name %></h5>
+          <div class="card-text text-black-50"><%= post.body %></div>
+          <div class="card-text text-black-50"><%= post.created_at.strftime('%Y年 %m月 %d日 %H時 %m分 ') %></div>
+          <%= link_to '削除', post, class: '', method: :delete %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <!-- /.row -->
+
+</div>
+
+<!-- /.container -->
