@@ -20,10 +20,11 @@ gem 'rails-i18n'
 
 gem 'bootstrap'
 
-
 gem "jquery-rails"
 
 gem 'kaminari'
+
+gem 'devise'
 
 
 # Use CoffeeScript for .coffee assets and views

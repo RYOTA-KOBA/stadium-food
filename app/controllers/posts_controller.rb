@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   
+  before_action :authenticate_user!
   before_action :set_target_post, only: %i[show edit update destroy]
+  before_action :validate_user, only: %i[edit update destroy]
   
   
   def index
@@ -13,7 +15,7 @@ class PostsController < ApplicationController
 
   def create
     post = Post.new(post_params)
-
+    post.user_id = current_user.id
     if post.save
       flash[:success] = '投稿が送信されました'
       redirect_to post
@@ -63,4 +65,10 @@ class PostsController < ApplicationController
   def set_target_post
     @post = Post.find(params[:id])
   end 
+
+  def validate_user
+    if @post.user != current_user
+      redirect_to root_path, alert: 'この機能はログインしないと利用できません'
+    end
+  end
 end
