@@ -1,5 +1,6 @@
 <%= form_for post do |f| %>
-  <div class="w-50 center-block">  
+  <div class="w-50 center-block"> 
+  <%= render 'shared/error_messages' %>
     <div class="form-group">
         <%= f.label :name, '名前' %>
         <%= f.text_field :name, class: 'form-control' %>

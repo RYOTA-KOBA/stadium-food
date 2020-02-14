@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   
   
   def index
-    @posts = Post.all.page(params[:page]).per(8)
+    @posts = Post.all.page(params[:page]).per(8).order(id: "DESC")
   end
   
   def new
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     else
       redirect_to new_post_path, flash: {
         post: post,
-        error.messages: poat.error.full_messages
+        error_messages: post.errors.full_messages
       }
     end
     
@@ -28,6 +28,8 @@ class PostsController < ApplicationController
   
   
   def show
+    @comment = Comment.new(post_id: @post.id )
+    @comment = @post.comments.new
   end
 
   def edit
@@ -35,8 +37,14 @@ class PostsController < ApplicationController
 
   def update
     @post.update(post_params)
-
-    redirect_to @post
+    if @post.update(post_params)
+      redirect_to @post
+    else
+      redirect_to edit_post_path, flash: {
+        post: @post,
+        error_messages: @post.errors.full_messages
+      }
+    end
   end
 
   def destroy

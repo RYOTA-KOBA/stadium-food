@@ -3,3 +3,11 @@
 
 
 <%= render @post %>
+
+<div class="p-comment__list mx-auto">
+  <div class="p-comment__listTitle">コメント</div>
+  <%= render @post.comments %>
+</div>
+
+
+<%= render partial: 'comments/form', locals: { comment: @comment } %>

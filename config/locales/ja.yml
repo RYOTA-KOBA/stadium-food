@@ -1,4 +1,10 @@
 ja:
+  activerecord:
+    attributes:
+      post:
+        body: 'キャプション'
+      comment:
+        comment: 'コメント'  
   views:
     pagination:
       first: '最初'
