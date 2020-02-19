@@ -1,25 +1,37 @@
 # README
+【アプリ名】
+スタジアムグルメ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+【アプリ概要】
+各ユーザーが自分が食べたスタジアムグルメを写真とともにコメントを添えて共有するサービスです。
 
-Things you may want to cover:
+【使い方】
+ユーザー登録後、新規投稿ページから写真とコメント付きでスタジアムグルメを投稿する。
 
-* Ruby version
+【URL】
+https://still-anchorage-77543.herokuapp.com
 
-* System dependencies
+【Github】
+https://github.com/RYOTA-KOBA/stadium-food
 
-* Configuration
 
-* Database creation
+【言語・フレームワーク】
+・ruby 2.5.0
+・rails 5.2.4.1
 
-* Database initialization
+【開発環境】
+・VScode
 
-* How to run the test suite
+【インフラ】
+・heroku
 
-* Services (job queues, cache servers, search engines, etc.)
+【今後取り組む課題】
+◎投稿をすると関連データがindexに表示されてしまう問題の解決
+◎簡単ログインの実装
+◎レイアウトを整える
 
-* Deployment instructions
+・インフラのAWS(EC2,VPCなど)化
+・アプリのコンテナ化(Docker)
+・CircleCI導入
 
-* ...
-# stadium-food
+
