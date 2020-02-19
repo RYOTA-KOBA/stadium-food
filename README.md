@@ -26,7 +26,6 @@ https://github.com/RYOTA-KOBA/stadium-food
 ・heroku
 
 【今後取り組む課題】
-◎投稿をすると関連データがindexに表示されてしまう問題の解決
 ◎簡単ログインの実装
 ◎レイアウトを整える
 

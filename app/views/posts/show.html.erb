@@ -2,7 +2,7 @@
 
 <div class="p-comment__list mx-auto">
   <div class="p-comment__listTitle">コメント</div>
-  <%= render @post.comments %>
+  <%= render @post.comments.select(&:persisted?) %>
 </div>
 
 
