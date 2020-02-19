@@ -3,7 +3,15 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_target_post, only: %i[show edit update destroy]
   before_action :validate_user, only: %i[edit update destroy]
-  
+
+  #簡単ログイン機能
+  def new_guest
+    user = User.find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+    sign_in user
+    redirect_to posts_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
   
   def index
     @posts = Post.all.page(params[:page]).per(8).order(id: "DESC")
@@ -32,6 +40,7 @@ class PostsController < ApplicationController
   def show
     @comment = Comment.new(post_id: @post.id )
     @comment = @post.comments.new
+    
   end
 
   def edit
@@ -59,7 +68,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:name, :body)
+    params.require(:post).permit(:name, :body, :image)
   end
 
   def set_target_post
@@ -72,3 +81,4 @@ class PostsController < ApplicationController
     end
   end
 end
+

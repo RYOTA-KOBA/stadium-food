@@ -4,12 +4,13 @@
     <nav class="navbar navbar-light bg-light">
       <form class="form-inline pr-5">
         <% if user_signed_in? %>
-          <%= link_to current_user.profile.name, class: 'btn btn-danger' %>
+          <a href="#" class="btn btn-danger"><%= current_user.profile.name %></a>
           &emsp;
           <%= link_to '新規投稿', new_post_path, class: 'btn btn-outline-success mr-2' %>
           &nbsp;
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn btn-outline-success mr-2' %>
         <% else %>
+          &nbsp;
           <%= link_to 'ログイン', new_user_session_path %>
           &nbsp;
           <%= link_to 'ユーザー登録', new_user_registration_path %>

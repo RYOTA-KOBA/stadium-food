@@ -3,15 +3,19 @@
       <div class="alert alert-primary"><%= flash[:success] %></div>
     <% end %>
     <div class="col img-col">
-      <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+      <% if post.image_id.present? %>
+        <%= image_tag attachment_url(@post, :image, :fill, 500, 300, format: "jpg"), style: 'object-fit: cover;' %>
+      <% else %>
+        <%= image_tag 'gana.jpg', :size =>'240x160', style: 'object-fit: cover;' %>
+      <% end %>
     </div>
     <div class="col card-body text-left">
         <h5 class="card-title mb-0"><%= post.name %></h5>
         <div class="card-text text-black-50"><%= simple_format(post.body) %></div>
         <div class="card-text text-black-50"><%= post.created_at.strftime('%Y年 %m月 %d日 %H時 %m分 ') %></div>
         <% if @post.user == current_user %>
-        <%= link_to '編集', edit_post_path(post), class: '' %>
-        <%= link_to '削除', post, class: '', method: :delete %>
+          <%= link_to '編集', edit_post_path(post), class: '' %>
+          <%= link_to '削除', post, class: '', method: :delete %>
         <% end %>
     </div>
 </div>

@@ -3,7 +3,10 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'
    }
+   
  root 'posts#index'
  resources :posts
  resources :comments, only: %i[create destroy]
+ resources :testsessions, only: :create
 end
+

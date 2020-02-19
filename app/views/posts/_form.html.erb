@@ -1,15 +1,25 @@
 <%= form_for post do |f| %>
-  <div class="w-50 center-block"> 
-  <%= render 'shared/error_messages' %>
-    <div class="form-group">
-        <%= f.label :name, '名前' %>
-        <%= f.text_field :name, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-        <%= f.text_area :body, class: 'form-control', placeholder: "キャプションを入力...", rows: 5 %>
-    </div>
-    <%= link_to "キャンセル", root_path, class: "btn post-form-btn mr-2", style: "border: none;" %>
-    <%= f.submit 'シェア', class: 'btn btn-primary' %>
-  </div>  
+  <div class="container">
+    <%= render 'shared/error_messages' %>
+      <div id="cover-image" class="form-group padding-top-15 relative">
+      <% if post.image_id.present? %>
+        <%= image_tag attachment_url(post, :image), class: 'img-responsive new-post-image' %>
+      <% else %>
+        <%= image_tag 'grey.jpg', class: 'img-responsive new-post-image' %>
+      <% end %>
+        <i class="fa fa-camera"></i>
+      </div>
+      <%= f.attachment_field :image %>
+      <div class="form-group">
+          <%= f.label :name, '名前' %>
+          <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+          <%= f.text_area :body, class: 'form-control', placeholder: "キャプションを入力...", rows: 5 %>
+      </div>
+      <%= link_to "キャンセル", root_path, class: "btn post-form-btn mr-2", style: "border: none;" %>
+      <%= f.submit 'シェア', class: 'btn btn-primary' %>
+  </div>
+    
 <% end %>
 

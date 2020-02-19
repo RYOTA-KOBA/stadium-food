@@ -1,8 +1,9 @@
 class Post < ApplicationRecord
-belongs_to :user
+    belongs_to :user
 
-has_many :comments, dependent: :delete_all 
+    has_many :comments, dependent: :delete_all 
 
-validates :body, presence: true
-    
+    validates :body, presence: true
+        
+    attachment :image
 end
