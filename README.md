@@ -23,7 +23,7 @@ https://github.com/RYOTA-KOBA/stadium-food
 ・VScode
 
 【インフラ】
-・heroku
+・heroku(puma)
 
 【今後取り組む課題】
 ◎簡単ログインの実装

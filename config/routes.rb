@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
-  
   devise_for :users, :controllers => {
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'
    }
    
+   
+
  root 'posts#index'
  resources :posts
  resources :comments, only: %i[create destroy]
  resources :testsessions, only: :create
- get 'users/:id', to: 'users#show'
+ resources :users, only: %i[edit show]
 end
 
