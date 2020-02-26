@@ -31,6 +31,6 @@ https://github.com/RYOTA-KOBA/stadium-food
 
 ・インフラのAWS(EC2,VPCなど)化
 ・アプリのコンテナ化(Docker)
-・CircleCI導入
+
 
 
