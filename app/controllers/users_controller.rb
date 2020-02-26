@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
       # 更新に成功した場合を扱う。
       flash[:success] = "プロフィールを更新しました"
-      redirect_to @user
+      redirect_to user_path
     else
       render 'edit'
     end
