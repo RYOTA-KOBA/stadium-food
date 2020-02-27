@@ -29,22 +29,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.find(params[:id])
   end
 
-  def update
-    @user = User.find(params[:id])
+  # def update
+  #   @user = User.find(params[:id])
 
-    if @user.update(user_params)
-      flash[:success] = "プロフィールを更新しました"
-      redirect_to user_path
-    else
-      render user_edit_path
-    end
-  end
+  #   if @user.update(user_params)
+  #     flash[:success] = "プロフィールを更新しました"
+  #     redirect_to user_path
+  #   else
+  #     render user_edit_path
+  #   end
+  # end
 
-  private
+  # private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password,:password_confirmation)
-    end
+  #   def user_params
+  #     params.require(:user).permit(:name, :email, :password,:password_confirmation)
+  #   end
 
   
   # GET /resource/cancel
