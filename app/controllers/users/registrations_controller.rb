@@ -4,16 +4,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-  # def detail
-  #   @user = User.find(params[:id])
-  # end
+  def show
+    @user = User.find(params[:id])
+  end
 
-  # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+  end
 
-  # POST /resource
   def create
     super
     #ユーザーが無事に作られていたらprofileを作成
@@ -28,21 +25,28 @@ class Users::RegistrationsController < Devise::RegistrationsController
     
   end
 
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    @user = User.find(params[:id])
+  end
 
-  # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    @user = User.find(params[:id])
 
-  # DELETE /resource
-  # def destroy
-  #   super
-  # end
+    if @user.update(user_params)
+      flash[:success] = "プロフィールを更新しました"
+      redirect_to user_path
+    else
+      render user_edit_path
+    end
+  end
 
+  private
+
+    def user_params
+      params.require(:user).permit(:name, :email, :password,:password_confirmation)
+    end
+
+  
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
   # in to be expired now. This is useful if the user wants to
