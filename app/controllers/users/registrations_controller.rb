@@ -21,13 +21,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
       profile.name = params[:profile][:name]
       profile.save
     end 
-    puts "===============#{params[:profile][:name]}================="
-    
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
+  
 
   # def update
   #   @user = User.find(params[:id])

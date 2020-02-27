@@ -3,11 +3,11 @@
 <h1 class="text-center">
   <%= image_tag current_user.gravatar_url, class: 'mb-3' %>
   <br>
-  <%= current_user.profile.name %>
+  <%= current_user.name %>
 </h1>
 <div class="text-center font-weight-bold">
   <%= current_user.email %>
   <br>
-  <%= link_to '設定', user_edit_path %>
+  <%= link_to 'プロフィールを編集', user_edit_path, class: 'btn btn-white btn-md profile-edit-button' %>
 </div>
   
