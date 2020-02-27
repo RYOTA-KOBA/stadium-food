@@ -14,6 +14,6 @@ Rails.application.routes.draw do
  resources :posts
  resources :comments, only: %i[create destroy]
  resources :testsessions, only: :create
- resources :users, only: %i[show update]
+ resources :users, only: %i[show update edit]
 end
 
