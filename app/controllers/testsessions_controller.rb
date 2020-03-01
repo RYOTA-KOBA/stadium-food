@@ -4,5 +4,5 @@ class TestsessionsController < ApplicationController
     #     session[:user_id] = user.id
     #     flash[:success] = "テストユーザとしてログインしました。"
     #     redirect_to user
-    #   end
+    # end
 end

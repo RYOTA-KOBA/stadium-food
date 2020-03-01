@@ -9,21 +9,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def new
+    @user = User.new
   end
 
   def create
     super
+    user = User.new(user_params)
     #ユーザーが無事に作られていたらprofileを作成
-    if resource
-      #resource==user
-      profile = Profile.new
-      profile.user_id = resource.id
-      profile.name = params[:profile][:name]
-      profile.save
+    if user.save
+      session[:user_id] = user.id
+      redirect_to post_path
+    else
+      redirect_to back
     end 
   end
 
-  
+  def edit
+    @user = User.find(params[:id])
+  end
 
   # def update
   #   @user = User.find(params[:id])
@@ -36,11 +39,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   end
   # end
 
-  # private
+  private
 
-  #   def user_params
-  #     params.require(:user).permit(:name, :email, :password,:password_confirmation)
-  #   end
+    def user_params
+      params.require(:user).permit(:name, :email, :password,:password_confirmation)
+    end
 
   
   # GET /resource/cancel

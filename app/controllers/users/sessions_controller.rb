@@ -6,7 +6,7 @@ class Users::SessionsController < Devise::SessionsController
   
   # GET /resource/sign_in
   # def new
-  #   super
+  #   user = User.find_or_create_by(name: "GuestUser", email: 'guest@example.com', password: "password" )
   # end
 
   # POST /resource/sign_in

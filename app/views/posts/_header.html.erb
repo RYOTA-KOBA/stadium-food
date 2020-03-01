@@ -4,7 +4,7 @@
     <nav class="navbar navbar-light bg-light">
       <form class="form-inline pr-5">
         <% if user_signed_in? %>
-          <%= link_to current_user.profile.name, user_path(current_user), class: 'btn user-btn btn-md' %>
+          <%= link_to current_user.name, user_path(current_user), class: 'btn user-btn btn-md' %>
           &emsp;
           <%= link_to '新規投稿', new_post_path, class: 'btn btn-outline-success mr-2' %>
           &nbsp;

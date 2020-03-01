@@ -10,6 +10,6 @@ class User < ApplicationRecord
   include Gravtastic
   gravtastic
 
-  validates :profile, length: { maximum: 200 } #追記
+  validates :profile, length: { maximum: 200 } 
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 end
