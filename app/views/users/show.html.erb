@@ -1,9 +1,8 @@
-<% provide(:title, current_user.profile.name) %>
 
 <h1 class="text-center">
   <%= image_tag current_user.gravatar_url, class: 'mb-3' %>
   <br>
-  <%= current_user.profile.name %>
+  <%= current_user.name %>
 </h1>
 <div class="text-center font-weight-bold">
   <%= current_user.email %>
