@@ -26,11 +26,13 @@ https://github.com/RYOTA-KOBA/stadium-food
 ・heroku(puma)
 
 【今後取り組む課題】
-◎簡単ログインの実装
 ◎レイアウトを整える
 
-・インフラのAWS(EC2,VPCなど)化
+
+・テストコードの記述
+・インフラのAWS(EC2,VPC,S3,RDSなど)化
 ・アプリのコンテナ化(Docker)
+・CI/CDの導入
 
 
 
