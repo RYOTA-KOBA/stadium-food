@@ -26,7 +26,7 @@ https://github.com/RYOTA-KOBA/stadium-food
 ・heroku(puma)
 
 【今後取り組む課題】
-◎レイアウトを整える
+◎UI/UXを整える
 
 
 ・テストコードの記述
@@ -36,6 +36,7 @@ https://github.com/RYOTA-KOBA/stadium-food
 ・アプリのコンテナ化(Docker)
 <br>
 ・CI/CDの導入
-
+<br>
+・プルリクを活用した擬似的なチーム開発を行う
 
 
