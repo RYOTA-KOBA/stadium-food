@@ -27,6 +27,7 @@ https://github.com/RYOTA-KOBA/stadium-food
 
 【今後取り組む課題】
 ◎UI/UXを整える
+◎画像の保存先をS3にする(herokuの揮発性のため)
 
 
 ・テストコードの記述
