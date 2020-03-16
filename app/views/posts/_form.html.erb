@@ -1,11 +1,16 @@
 <%= form_for post do |f| %>
   <div class="container">
     <%= render 'shared/error_messages' %>
-      
-      <div class="form-group">
-          <%= f.label "画像をアップロード" %>
-          <%= f.file_field :image_id, class: 'form-control' %>
-      </div>
+      <div id="cover-image" class="form-group padding-top-15 relative">
+        <% if post.image_id.present? %>
+          <%= image_tag attachment_url(post, :image), class: 'img-responsive new-post-image' %>
+        <% else %>
+          <%= image_tag 'grey.jpg', class: 'img-responsive new-post-image' %>
+        <% end %>
+          <i class="fa fa-camera"></i>
+      </div>  
+        <%= f.attachment_field :image %>
+
       <div class="form-group">
           <%= f.label :name, '名前' %>
           <%= f.text_field :name, class: 'form-control' %>
