@@ -1,6 +1,6 @@
 # README
 【アプリ名】<br>
-スタジアムグルメ
+<h3>スタジアムグルメ</h3>
 <br>
 【アプリ概要】
 <br>
@@ -15,12 +15,13 @@
 https://still-anchorage-77543.herokuapp.com
 <br>
 【Github】
+<br>
 https://github.com/RYOTA-KOBA/stadium-food
 <br>
 
 【言語・フレームワーク】
 <br>
-・ruby 2.5.0
+・ruby 2.5.7
 <br>
 ・rails 5.2.4.1
 <br>
@@ -31,8 +32,9 @@ https://github.com/RYOTA-KOBA/stadium-food
 Docker/docker-compose
 <br>
 【インフラ】
+<br>
 ・heroku(puma)
-
+<br>
 【今後取り組む課題】
 <br>
 ◎UI/UXを整える
