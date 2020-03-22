@@ -47,8 +47,6 @@ Docker/docker-compose
 <br>
 ・インフラのAWS(EC2,VPC,S3,RDSなど)化
 <br>
-・Dockerの導入
-<br>
 ・CI/CDの導入
 <br>
 ・プルリクを活用した擬似的なチーム開発を行う
