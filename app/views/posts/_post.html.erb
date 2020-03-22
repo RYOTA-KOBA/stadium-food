@@ -8,6 +8,9 @@
       <% else %>
         <%= image_tag 'gana.jpg', :size =>'240x160', style: 'object-fit: cover;' %>
       <% end %>
+
+      <%= image_tag photo.image.to_s %>
+
     </div>
     <div class="col card-body text-left">
         <h5 class="card-title mb-0"><%= post.name %></h5>
