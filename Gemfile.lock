@@ -1079,7 +1079,9 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
-    mimemagic (0.3.4)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
@@ -1110,8 +1112,10 @@ GEM
     pg (1.2.2-x86-mingw32)
     popper_js (1.16.0)
     public_suffix (4.0.3)
-    puma (3.12.2)
-    puma (3.12.2-java)
+    puma (4.3.8)
+      nio4r (~> 2.0)
+    puma (4.3.8-java)
+      nio4r (~> 2.0)
     rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
@@ -1284,7 +1288,7 @@ DEPENDENCIES
   mini_racer
   nokogiri
   pg
-  puma (~> 3.11)
+  puma (~> 4.3)
   rails (~> 5.2.3)
   rails-i18n
   refile!
